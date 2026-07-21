@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 class Plant():
     _name: str
     _height: float
@@ -39,20 +40,11 @@ class Plant():
         )
 
 
-if __name__ == "__main__":
-    print("=== Garden Security System ===")
-    rose = Plant("Rose", 15.0, 10)
-    print(
-        f"Plant created: {rose.get_name()}: {rose.get_height():.1f}cm, "
-        f"{rose.get_age()} days old"
-    )
-    print()
-    rose.set_height(25.0)
-    print(f"Height updated: {int(rose._height)}cm")
-    rose.set_age(30)
-    print(f"Age updated: {rose._age} days")
-    rose.set_height(-5.0)
-    rose.set_age(-1)
-    print()
-    print("Current state: ", end="")
-    rose.show()
+class Flower(Plant):
+    _color: str
+
+    def __init__(self, name: str, height: float, age: int, color: str) -> None:
+        super().__init__(name, height, age)
+        self._color = color
+    
+    def bloom(self) -> None:
