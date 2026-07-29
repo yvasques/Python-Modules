@@ -101,11 +101,11 @@ class Flower(Plant):
 
     def show(self) -> None:
         super().show()
-        print(f"Color: {self._color}")
+        print(f" Color: {self._color}")
         if self._is_bloomed:
-            print(f"{self._name} is blooming beautifully!")
+            print(f" {self._name} is blooming beautifully!")
         else:
-            print(f"{self._name} has not bloomed yet")
+            print(f" {self._name} has not bloomed yet")
 
 
 class Tree(Plant):
@@ -189,7 +189,7 @@ def display_plant_stats(plant: Plant) -> None:
 
 if __name__ == "__main__":
     print("=== Garden statistics ===")
-    print("Check year-old")
+    print("=== Check year-old")
     print(f"Is 30 days more than a year? -> {Plant.plant_age_check(30)}")
     print(f"Is 400 days more than a year? -> {Plant.plant_age_check(400)}")
     print()
@@ -199,7 +199,7 @@ if __name__ == "__main__":
     rose.show()
     display_plant_stats(rose)
 
-    print("\n[asking the rose to grow and bloom]")
+    print("[asking the rose to grow and bloom]")
     rose.grow(8.0)
     rose.bloom()
     rose.show()
