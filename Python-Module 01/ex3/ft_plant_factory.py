@@ -17,6 +17,12 @@ class Plant():
             f"{self.height:.1f}cm, {self.age} days old"
         )
 
+    def grow(self) -> None:
+        self.height += 0.8
+
+    def age_one_day(self) -> None:
+        self.age += 1
+
 
 def main() -> None:
     print("=== Plant Factory Output ===")
