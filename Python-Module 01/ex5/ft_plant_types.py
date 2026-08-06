@@ -74,7 +74,7 @@ class Tree(Plant):
         super().__init__(name, height, age)
         self._trunk_diameter = trunk_diameter
 
-    def produte_shade(self) -> None:
+    def produce_shade(self) -> None:
         print(f"Tree {self._name} now produces a shade of "
               f"{self.get_height():.1f}cm long and "
               f"{self._trunk_diameter:.1f} wide."
@@ -122,7 +122,7 @@ if __name__ == "__main__":
     oak = Tree("Oak", 200, 365, 5.0)
     oak.show()
     print("[asking the oak to produce shade]")
-    oak.produte_shade()
+    oak.produce_shade()
     print()
 
     print("=== Vegetable")

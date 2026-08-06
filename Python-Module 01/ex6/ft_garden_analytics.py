@@ -198,7 +198,6 @@ if __name__ == "__main__":
     rose = Flower("Rose", 15.0, 10, "red")
     rose.show()
     display_plant_stats(rose)
-
     print("[asking the rose to grow and bloom]")
     rose.grow(8.0)
     rose.bloom()
@@ -211,7 +210,7 @@ if __name__ == "__main__":
     oak.show()
     display_plant_stats(oak)
 
-    print("\n[asking the oak to produce shade]")
+    print("[asking the oak to produce shade]")
     oak.produce_shade()
     display_plant_stats(oak)
     print()
@@ -220,7 +219,7 @@ if __name__ == "__main__":
     sunflower = Seed("Sunflower", 80.0, 45, "yellow")
     sunflower.show()
 
-    print("\n[make sunflower grow, age and bloom]")
+    print("[make sunflower grow, age and bloom]")
     sunflower.grow(30.0)
     sunflower.age(20)
     sunflower.bloom()
