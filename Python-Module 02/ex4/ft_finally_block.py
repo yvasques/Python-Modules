@@ -16,26 +16,31 @@ def water_plant(plant_name: str) -> None:
     print(f"Watering {plant_name}: [OK]")
 
 
-print("Opening watering system")
-try:
-    water_plant("Tomato")
-    water_plant("Lettuces")
-    water_plant("Carrots")
-except PlantError as e:
-    print(f"Caught {e.__class__.__name__}: {e}")
-    print(" ..ending tests and returning to main")
-finally:
-    print("Closing watering system")
+def test_watering_system() -> None:
+    print("Opening watering system")
+    try:
+        water_plant("Tomato")
+        water_plant("Lettuces")
+        water_plant("Carrots")
+    except PlantError as e:
+        print(f"Caught {e.__class__.__name__}: {e}")
+        print(" ..ending tests and returning to main")
+    finally:
+        print("Closing watering system")
 
-print("\nOpening watering system")
-try:
-    water_plant("Tomato")
-    water_plant("lettuces")
-    water_plant("Carrots")
-except PlantError as e:
-    print(f"Caught {e.__class__.__name__}: {e}")
-    print(" ..ending tests and returning to main")
-finally:
-    print("Closing watering system")
+    print("\nOpening watering system")
+    try:
+        water_plant("Tomato")
+        water_plant("lettuces")
+        water_plant("Carrots")
+    except PlantError as e:
+        print(f"Caught {e.__class__.__name__}: {e}")
+        print(" ..ending tests and returning to main")
+    finally:
+        print("Closing watering system")
 
-print("\nCleanup always happens, even with errors!")
+    print("\nCleanup always happens, even with errors!")
+
+
+if __name__ == "__main__":
+    test_watering_system()

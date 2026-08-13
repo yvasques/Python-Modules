@@ -27,11 +27,13 @@ def water_error(water_amount: int) -> None:
 
 def test_errors() -> None:
     print("=== Custom Garden Errors Demo ===")
+
     print("\nTesting PlantError...")
     try:
-        plant_error("tomato", 1)
+        plant_error("tomato", 2)
     except PlantError as e:
         print(f"Caught PlantError: {e}")
+
     print("\nTesting WaterError...")
     try:
         water_error(4)
