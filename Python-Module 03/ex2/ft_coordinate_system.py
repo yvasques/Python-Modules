@@ -7,27 +7,28 @@ def get_player_pos() -> tuple[float, float, float]:
         raw_input: str = input(
             "Enter new coordinates as floats in format 'x,y,z': "
         )
-        parts: list[str] = raw_input.split(",")
-
-        if len(parts) != 3:
+        try:
+            x_str, y_str, z_str = raw_input.split(",")
+        except ValueError:
             print("Invalid syntax")
             continue
 
         try:
-            x: float = float(parts[0].strip())
-            y: float = float(parts[1].strip())
-            z: float = float(parts[2].strip())
-            return (x, y, z)
-        except ValueError as err:
-            invalid_part: str = ""
-            for part in parts:
-                clean_part: str = part.strip()
-                try:
-                    float(clean_part)
-                except ValueError:
-                    invalid_part = clean_part
-                    break
-            print(f"Error on parameter '{invalid_part}': {err}")
+            x: float = float(x_str.strip())
+        except ValueError as e:
+            print(f"Error on parameter '{x_str.strip()}': {e}")
+            continue
+        try:
+            y: float = float(y_str.strip())
+        except ValueError as e:
+            print(f"Error on parameter '{y_str.strip()}': {e}")
+            continue
+        try:
+            z: float = float(z_str.strip())
+        except ValueError as e:
+            print(f"Error on parameter '{z_str.strip()}': {e}")
+            continue
+        return (x, y, z)
 
 
 def calculate_distance(
@@ -54,9 +55,9 @@ def main() -> None:
 
     dist_between: float = calculate_distance(pos1, pos2)
     print(
-        "Distance between the 2 sets of coordinates:"
+        "Distance between the 2 sets of coordinates: "
         f"{round(dist_between, 4)}"
-     )
+        )
 
 
 if __name__ == "__main__":
