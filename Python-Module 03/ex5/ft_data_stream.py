@@ -29,7 +29,8 @@ def consume_event(
 ) -> Generator[tuple[str, str], None, None]:
     while len(event_list) > 0:
         index: int = random.randint(0, len(event_list) - 1)
-        event: tuple[str, str] = event_list.pop(index)
+        event: tuple[str, str] = event_list[index]
+        del event_list[index]
         yield event
 
 

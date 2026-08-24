@@ -37,10 +37,11 @@ def main() -> None:
     print(f"Player Charlie: {charlie}")
     print(f"Player Dylan: {dylan}")
 
-    all_achievements: set[str] = alice | bob | charlie | dylan
+    all_achievements: set[str] = set.union(alice, bob, charlie, dylan)
     print(f"\nAll distinct achievements: {all_achievements}")
 
-    common_achievements: set[str] = alice & bob & charlie & dylan
+    common_achievements: set[str] = set.intersection(
+        alice, bob, charlie, dylan)
     print(f"\nCommon achievements: {common_achievements}\n")
 
     print(f"Only Alice has: {alice - (bob | charlie | dylan)}")
@@ -48,10 +49,10 @@ def main() -> None:
     print(f"Only Charlie has: {charlie - (bob | alice | dylan)}")
     print(f"Only Dylan has: {dylan - (bob | charlie | alice)}\n")
 
-    print(f"Alice is missing: {all_achievements - alice}")
-    print(f"Bob is missing: {all_achievements - bob}")
-    print(f"Charlie is missing: {all_achievements - charlie}")
-    print(f"Dylan is missing: {all_achievements - dylan}")
+    print(f"Alice is missing: {set.difference(all_achievements, alice)}")
+    print(f"Bob is missing: {set.difference(all_achievements, bob)}")
+    print(f"Charlie is missing: {set.difference(all_achievements, charlie)}")
+    print(f"Dylan is missing: {set.difference(all_achievements, dylan)}")
 
 
 if __name__ == "__main__":
