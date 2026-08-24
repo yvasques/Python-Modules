@@ -32,11 +32,14 @@ def get_player_pos() -> tuple[float, float, float]:
 
 
 def calculate_distance(
-    pos1: tuple[float, float, float], pos2: tuple[float, float, float]
+    pos1: tuple[float, float, float],
+    pos2: tuple[float, float, float]
 ) -> float:
     x1, y1, z1 = pos1
     x2, y2, z2 = pos2
-    return math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2 + (z2 - z1) ** 2)
+    return round(math.sqrt((x2 - x1) ** 2 +
+                           (y2 - y1) ** 2 +
+                           (z2 - z1) ** 2), 4)
 
 
 def main() -> None:
