@@ -16,13 +16,6 @@ def transform_content(raw_content: str) -> str:
         return ""
 
 
-def prompt_user(prompt_message: str) -> str:
-    sys.stdout.write(prompt_message)
-    sys.stdout.flush()
-    line: str = sys.stdin.readline()
-    return line.strip()
-
-
 def save_to_file(destination_path: str, content: str) -> None:
     file_obj: IO[str] | None = None
     try:
@@ -62,7 +55,9 @@ def process_archive(file_path: str) -> None:
     print("---\n")
     print(transformed_content, end="")
     print("\n---")
-    dest_file: str = prompt_user("Enter new file name (or empty): ")
+    sys.stdout.write("Enter new file name (or empty): ")
+    sys.stdout.flush()
+    dest_file: str = sys.stdin.readline().strip()
     if not dest_file:
         print("Not saving data.")
     else:
