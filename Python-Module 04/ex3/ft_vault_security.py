@@ -30,7 +30,7 @@ def main() -> None:
     print(res2)
 
     print("\nUsing 'secure_archive' to read from a regular file:")
-    res3: tuple[bool, str] = secure_archive("teste.txt")
+    res3: tuple[bool, str] = secure_archive("test.txt")
     print(res3)
 
     print("\nUsing 'secure_archive' to write previous content to a new file:")
