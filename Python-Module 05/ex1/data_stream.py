@@ -161,10 +161,10 @@ def main() -> None:
     print("\nInitialize Data Stream...\n")
     ds = DataStream()
     ds.print_processors_stats()
+
     print("Registering Numeric Processor")
     num_proc = NumericProcessor()
     ds.register_processor(num_proc)
-
     batch: list[Any] = [
         "Hello World",
         [1.25, 4, 5.23],
