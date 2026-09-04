@@ -8,11 +8,14 @@ def secure_archive(
     try:
         if action == "write":
             with open(filename, "w") as file_obj:
+                print(file_obj.closed)
                 file_obj.write(content)
+            print(file_obj.closed)
             return (True, "Content successfully written to file")
         else:
             with open(filename, "r") as file_obj:
                 file_content: str = file_obj.read()
+            print(file_obj.closed)
             return (True, file_content)
     except OSError as e:
         return (False, str(e))

@@ -15,7 +15,7 @@ def recover_text(file_path: str) -> None:
         print(content, end="")
         print("\n---")
     except OSError as e:
-        print(f"Erro opening file {file_path}: {e}")
+        print(f"Error opening file {file_path}: {e}")
     finally:
         if file_obj is not None and not file_obj.closed:
             file_obj.close()
