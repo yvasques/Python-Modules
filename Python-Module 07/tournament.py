@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-from typing import List
 from ex0 import FlameFactory, AquaFactory, CreatureFactory
 from ex1 import HealingCreatureFactory, TransformCreatureFactory
 from ex2 import (
@@ -28,7 +27,7 @@ def run_tournament(opponents:
 
             print("\n* Battle *")
             print(c1.describe())
-            print("VS.")
+            print("vs.")
             print(c2.describe())
             print("now fight!")
 
@@ -52,13 +51,13 @@ def run_tournament(opponents:
 def main() -> None:
     flame_fac = FlameFactory()
     healing_fac = HealingCreatureFactory()
-    #transform_fac = TransformCreatureFactory()
+    transform_fac = TransformCreatureFactory()
 
     normal_strat = NormalStrategy()
     aggressive_strat = AggressiveStrategy()
     defensive_strat = DefensiveStrategy()
 
-    print("Tournament (basic)")
+    print("Tournament 0 (basic)")
     print("[(Flameling+Normal), (Healing+Defensive)]")
     run_tournament([(flame_fac, normal_strat), (healing_fac, defensive_strat)])
 
@@ -67,6 +66,17 @@ def main() -> None:
     print("[(Flameling+Aggressive), (Healing+Defensive)]")
     run_tournament([(flame_fac, aggressive_strat),
                     (healing_fac, defensive_strat)])
+
+    print("\n" + "=" * 40 + "\n")
+
+    print("Tournament 2 (multiple)")
+    print("[Aquahub+Normal, (Healing+Defensive), (Transform+Agressive)]")
+    aqua_fav = AquaFactory()
+    run_tournament([
+        (aqua_fav, normal_strat),
+        (healing_fac, defensive_strat),
+        (transform_fac, aggressive_strat),
+    ])
 
 
 if __name__ == "__main__":
