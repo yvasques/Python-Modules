@@ -8,12 +8,12 @@ def test_healing_creatures() -> None:
     base = factory.create_base()
     evolved = factory.create_evolved()
 
-    print("base:")
+    print("Testing Creature with healing capability base:")
     print(base.describe())
     print(base.attack())
     print(base.heal())  # type: ignore[attr-defined]
 
-    print("Evolved Creatures:")
+    print("===Evolved Creatures===")
     print(evolved.describe())
     print(evolved.attack())
     print(evolved.heal())  # type: ignore[attr-defined]
@@ -24,14 +24,14 @@ def test_transform_creatures() -> None:
     base = factory.create_base()
     evolved = factory.create_evolved()
 
-    print("Testing Creature with healing capability base:")
+    print("Testing Creature with transform capability base:")
     print(base.describe())
     print(base.attack())
     print(base.transform())  # type: ignore[attr-defined]
     print(base.attack())
     print(base.revert())  # type: ignore[attr-defined]
 
-    print("Evolved Creatures:")
+    print("===Evolved Creatures===")
     print(evolved.describe())
     print(evolved.attack())
     print(evolved.transform())  # type: ignore[attr-defined]

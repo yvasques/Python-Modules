@@ -37,7 +37,7 @@ class AggressiveStrategy(BattleStrategy):
         if not self.is_valid(creature):
             raise InvalidStrategyError(
                 f"Invalid Creature '{creature.name}' for this aggresive"
-                f"strategy"
+                f" strategy"
             )
         actions = []
         actions.append(creature.transform())  # type: ignore[attr-defined]
