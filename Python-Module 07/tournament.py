@@ -16,9 +16,9 @@ def run_tournament(opponents:
     print("***Tournament***")
     print(f"{len(opponents)} opponents involved.")
     contestants = []
-    for factory, strtategy in opponents:
+    for factory, strategy in opponents:
         creature = factory.create_base()
-        contestants.append((creature, strtategy))
+        contestants.append((creature, strategy))
 
     for i in range(len(contestants)):
         for j in range(i + 1, len(contestants)):
@@ -52,28 +52,28 @@ def main() -> None:
     flame_fac = FlameFactory()
     healing_fac = HealingCreatureFactory()
     transform_fac = TransformCreatureFactory()
+    aqua_fac = AquaFactory()
 
     normal_strat = NormalStrategy()
     aggressive_strat = AggressiveStrategy()
     defensive_strat = DefensiveStrategy()
 
-    print("Tournament 0 (basic)")
+    print("Tournament 0 (basic)\n")
     print("[(Flameling+Normal), (Healing+Defensive)]")
     run_tournament([(flame_fac, normal_strat), (healing_fac, defensive_strat)])
 
     print("\n" + "=" * 40 + "\n")
-    print("Torunament 1 (error)")
+    print("Torunament 1 (error)\n")
     print("[(Flameling+Aggressive), (Healing+Defensive)]")
     run_tournament([(flame_fac, aggressive_strat),
                     (healing_fac, defensive_strat)])
 
     print("\n" + "=" * 40 + "\n")
 
-    print("Tournament 2 (multiple)")
+    print("Tournament 2 (multiple)\n")
     print("[Aquahub+Normal, (Healing+Defensive), (Transform+Agressive)]")
-    aqua_fav = AquaFactory()
     run_tournament([
-        (aqua_fav, normal_strat),
+        (aqua_fac, normal_strat),
         (healing_fac, defensive_strat),
         (transform_fac, aggressive_strat),
     ])
