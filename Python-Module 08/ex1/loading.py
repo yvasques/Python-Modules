@@ -53,8 +53,8 @@ def main() -> None:
         print("\nERROR: Missing required dependencies!")
         print("To install with pip, run:")
         print("pip install -r requirements.txt")
-        print("To install with Poetry, run:")
-        print("poetry install")
+        print("To install and run with Poetry, run:")
+        print("poetry install \npoetry run python loading.py")
         return
 
     print("\nAnalyzing Matrix data...")

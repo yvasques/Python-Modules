@@ -1,15 +1,23 @@
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["poetry-core>=2.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+package-mode = false
 
 [project]
-name = "Matrix-loading"
-version = "1.0"
+name = "matrix-loading"
+version = "1.0.0"
 description = "The ex1 project"
 authors = [
-    {name = "yvasques", email = "yann.dias@outlook.com"}
+    { name = "yvasques", email = "yann.dias@outlook.com" }
 ]
-dependencies = [
-    "pandas",
-    "numpy",
-    "matplotlib"
-]
+requires-python = ">=3.10"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^2.0.0"
+numpy = "^1.24.0"
+matplotlib = "^3.7.0"
+
