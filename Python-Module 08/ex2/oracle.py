@@ -65,7 +65,7 @@ def main() -> None:
         print("WARNING: .env file missing! Using default values.")
 
     print("[OK] Production overrides available")
-    print("The Oracle sees all configurations.")
+    print("\nThe Oracle sees all configurations.")
 
 
 if __name__ == "__main__":
